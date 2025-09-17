@@ -105,7 +105,7 @@ public class FlowerRunner {
 		- `mostDifficultClimb()` - returns the climb in the `wantToClimb` with the highest difficulty
 		- `sortClimbLowToHigh()` - sorts the `wantToClimb` list from easiest to hardest climb using BubbleSort
 		- `sortClimbHighToLow()` -  sorts the `wantToClimb` list from hardest to easiest climb using BubbleSort
-		- `Mountain[] getFourteeners()` - returns an sub-array of `wantToClimb` containing only the peaks above 14,000 feet
+		- `MountainClimber getFourteeners()` - returns a new `MountainClimber` with `wantToClimb` containing only the peaks above 14,000 feet
 		- Overrides `toString()` method - prints `MountainClimber{Mountain{...}, Mountain{...}, ...}`
 
 - `MountainRunner` -  Use the main below to test your code. 
@@ -124,7 +124,7 @@ public static void main(String[] args){
 	climber.sortClimbHighToLow();
 	System.out.println(climber.getWantToClimb()[0]); // Mountain{Maroon Peak, 14163, 9.1}
 	
-	Mountain[] fourteeners = climber.getFourteeners();
+	MountaiClimber fourteeners = climber.getFourteeners();
 	System.out.println(fourteeners); // MountainClimber{Mountain{Maroon Peak, 14163, 9.1}, Mountain{Longs Peak, 14259, 8.3}, Mountain{Mount Elber, 14440, 3.2}}
 
 }
