@@ -8,7 +8,7 @@ public class FlowerBed {
 	}
 	public FlowerBed(int squibt)
 	{
-		Flower[] bud = new Flower[squibt];
+		bed = new Flower[squibt];
 	}
 	public Flower[] getBed()
 	{
@@ -23,7 +23,7 @@ public class FlowerBed {
 		int index = -1;
 		for (int i = 1; i < bed.length; i++)
 		{
-			if (bed[i - 1].equals(null) && bed[i].equals(null) && bed[i + 1].equals(null))
+			if (bed[i - 1] != null && bed[i] != null && bed[i + 1] != null)
 			{
 				bed[i] = f;
 				index = i;
@@ -38,9 +38,12 @@ public class FlowerBed {
 		Flower devour;
 		for (int j = 0; j < (int)(bed.length / 2); j++)
 		{
-			devour = bed[j];
-			bed[j] = bed[bed.length - j];
-			bed[bed.length - j] = devour;
+			if (bed.length> 0)
+			{
+				devour = bed[j];
+				bed[j] = bed[bed.length - j - 1];
+				bed[bed.length - j] = devour;
+			}
 		}
 	}
 	public String toString()
@@ -49,7 +52,7 @@ public class FlowerBed {
 		cheese += "FlowerBed{";
 		for (int k = 0; k < bed.length; k++)
 		{
-			if(!bed[k].equals(null))
+			if(bed[k] != null)
 			{
 				cheese += bed[k].toString();
 				if (k != bed.length)
