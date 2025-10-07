@@ -38,11 +38,11 @@ public class FlowerBed {
 		Flower devour;
 		for (int j = 0; j < (int)(bed.length / 2); j++)
 		{
-			if (bed.length> 0)
+			if (bed.length > 0)
 			{
 				devour = bed[j];
 				bed[j] = bed[bed.length - j - 1];
-				bed[bed.length - j] = devour;
+				bed[bed.length - j - 1] = devour;
 			}
 		}
 	}
